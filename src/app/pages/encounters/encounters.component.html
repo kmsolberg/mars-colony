@@ -2,11 +2,13 @@
   Recent Encounters
 </h2>
 <p>See an alien? Report it!</p>
+
 <ul>
-  <li>I saw an alien!</li>
-  <li>I saw an alien!</li>
-  <li>I saw an alien!</li>
-  <li>I saw an alien!</li>
-  <li>I saw an alien!</li>
+  <li *ngFor="let encounter of encounters">
+    {{ encounter.atype }}, {{ encounter.date}}, {{ encounter.action}}
+    </li>
 </ul>
-<button>Report Encounter</button>
+
+<div>
+  <a routerLink="/report" class="">Report Encounter</a>
+</div>
