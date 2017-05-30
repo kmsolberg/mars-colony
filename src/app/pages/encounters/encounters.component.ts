@@ -15,7 +15,7 @@ export class EncountersComponent implements OnInit {
   constructor(private encounterService: EncountersService) { 
 
   }
-  
+
   ngOnInit() {
     this.encounterService.getData()
     .subscribe((data) => {

@@ -9,10 +9,7 @@
       <input type="number" id="age" name="age" placeholder="Age" min="1" max="200"/>
       <select>
         <option value="">Select an Occupation</option>      
-        <option value=""></option>
-        <option value=""></option>  
-        <option value=""></option>  
-        <option value=""></option>  
+        <option value="" *ngFor="let job of jobs">{{ job.name }}</option>
       </select>
       <button>Check In</button>
     </fieldset>
