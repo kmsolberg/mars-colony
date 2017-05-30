@@ -1,0 +1,26 @@
+.landing-title{
+  text-transform: uppercase;
+  padding-top: 7rem;
+  font-size: 2.7rem;
+}
+
+h3{
+  padding-bottom: 5rem;
+  font-size: 2rem;
+}
+
+.home-page{
+  color: #18121E;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+  background: #984b43;
+  background: linear-gradient(136deg, #EAC67A, #984b43);
+}
+
+$color_mars_yellow: #EAC67A;
+$color_mars_green: #233237;
+$color_mars_red: #984b43;
+$color_mars_blue: #18121E;
