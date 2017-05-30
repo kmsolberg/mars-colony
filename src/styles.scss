@@ -50,6 +50,13 @@ table {
 }
 
 
+body, html{
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+
 $color_mars_yellow: #EAC67A;
 $color_mars_green: #233237;
 $color_mars_red: #984b43;
