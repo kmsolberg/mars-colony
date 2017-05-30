@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./encounters.component.scss']
 })
 export class EncountersComponent implements OnInit {
+  message = 'Hello';
+  listofMessages = [
+    'Ciao',
+    'Bonjour',
+    'Buongiorno',
+    'Wassup'
+  ];
 
   constructor() { }
 
