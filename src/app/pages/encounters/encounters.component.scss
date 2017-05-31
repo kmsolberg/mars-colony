@@ -1,4 +1,47 @@
 ul {
+  margin-top: 2rem;
   overflow: scroll;
   height: 30rem;
+  li{
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: #984b43;
+  background: linear-gradient(136deg, #984b43, #18121E);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #EAC67A;
+}
+
+h2{
+  font-size: 4rem;
+  margin-top: 2rem;
+}
+
+select{
+  display: block;
+  margin: auto;
+  width: 22rem;
+}
+
+a{
+  text-decoration: none;
+  color: #EAC67A;
+}
+
+p{
+  font-size: 1.7rem;
+}
+
+footer{
+  margin-top: 0;
+  h2{
+  font-size: 2.5rem;
+  }
 }

@@ -1,14 +1,16 @@
-<h2>
-  Recent Encounters
-</h2>
-<p>See an alien? Report it!</p>
+<body>
+  <h2>
+    Recent Encounters
+  </h2>
+  <p>See an alien? Report it!</p>
 
-<ul>
-  <li *ngFor="let encounter of encounters">
-    {{ encounter.atype }}, {{ encounter.date}}, {{ encounter.action}}
-    </li>
-</ul>
+  <ul>
+    <li *ngFor="let encounter of encounters">
+      {{ encounter.atype }}, {{ encounter.date}}, {{ encounter.action}}
+      </li>
+  </ul>
 
-<div>
-  <a routerLink="/report" class="">Report Encounter</a>
-</div>
+  <footer>
+    <a routerLink="/report" class=""><h2>Report Encounter</h2></a>
+  </footer>
+</body>

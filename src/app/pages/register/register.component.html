@@ -3,16 +3,17 @@
     <h2>Register</h2>
   </div>
   
-  <div class="register-form">
-    <fieldset>
-      <input type="text" id="name" name="user_name" placeholder="Name"/>
-      <input type="number" id="age" name="age" placeholder="Age" min="1" max="200"/>
-      <select>
-        <option value="">Select an Occupation</option>      
-        <option value="" *ngFor="let job of jobs">{{ job.name }}</option>
-      </select>
-      <button>Check In</button>
-    </fieldset>
-  </div>
+  <fieldset>
+    <input type="text" id="name" name="user_name" placeholder="Name"/>
+    <input type="number" id="age" name="age" placeholder="Age" min="1" max="200"/>
+    <select>
+      <option value="">Select an Occupation</option>      
+      <option value="" *ngFor="let job of jobs">{{ job.name }}</option>
+    </select>
+  </fieldset>
+
+  <footer>
+   <a routerLink="/encounters"><h2>Check In</h2></a>
+  </footer>
 
 </body>

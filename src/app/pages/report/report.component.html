@@ -1,12 +1,17 @@
-<h2>Report Encounter</h2>
-<p>Safety on Mars is Your Responsibility</p>
+<body class="report">
+  <h2>Report Encounter</h2>
+  <p>Safety on Mars is Your Responsibility</p>
 
-<fieldset>
-  <select name="" id="">
-    <option value="">Select an Alien</option>    
-    <option *ngFor="let aliens of aliens" value="">{{ aliens.type }}</option>       
-  </select>
-  <textarea name="textarea"
-   rows="10" cols="50" >Actions Taken</textarea>
-   <button>Report!</button>
-</fieldset>
+  <fieldset>
+    <select name="" id="">
+      <option value="">Select an Alien</option>    
+      <option *ngFor="let aliens of aliens" value="">{{ aliens.type }}</option>       
+    </select>
+    <textarea name="textarea"
+    rows="10" cols="50" >Actions Taken</textarea>
+  </fieldset>
+
+  <footer>
+   <a routerLink="/encounters"><h2>Check In</h2></a>
+  </footer>
+</body>

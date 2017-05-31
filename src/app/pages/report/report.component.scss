@@ -1,4 +1,57 @@
+.report {
+  height: 100vh;
+  width: 100vw;
+  background: #984b43;
+  background: linear-gradient(136deg, #EAC67A, #18121E);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #EAC67A;
+}
+
+h2{
+  font-size: 4rem;
+  margin-top: 4rem;
+  color: #18121E;
+}
+
 fieldset{
   display: flex;
   flex-direction: column;
+  margin-top: 4rem;
+}
+
+textarea{
+  width: 20rem;
+  padding: 0.75rem;
+  margin: 3rem;
+  background: transparent;
+  border: none;
+  border: 3px dashed #18121E;
+  font-size: 1.5rem;
+  font-family: 'Josefin Sans', sans-serif;
+  &::placeholder{
+    color: #18121E;
+  }
+  &:focus{
+    outline: 1px dashed #EAC67A;
+  }
+}
+
+select{
+  display: block;
+  margin: auto;
+  width: 22rem;
+}
+
+a{
+  text-decoration: none;
+  color: #18121E;
+}
+
+footer{
+  h2{
+  font-size: 2.5rem;
+  color: #EAC67A
+  }
 }
