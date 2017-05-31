@@ -3,17 +3,19 @@
     <h2>Register</h2>
   </div>
   
-  <fieldset>
-    <input type="text" id="name" name="user_name" placeholder="Name"/>
-    <input type="number" id="age" name="age" placeholder="Age" min="1" max="200"/>
-    <select>
-      <option value="">Select an Occupation</option>      
-      <option value="" *ngFor="let job of jobs">{{ job.name }}</option>
+  <form #arrivalForm="ngForm">
+    <input [(ngModel)]="colonist.name" name="name" type="text" placeholder="Name"/>
+    <input [(ngModel)]="colonist.age" type="number" id="age" name="age" placeholder="Age" min="1" max="200"/> 
+    <select [(ngModel)]="colonist.job_id" name="job">
+      <option value="NO_OCCUPATION_SELECTED">Select an Occupation</option>      
+      <option *ngFor="let job of jobs" [value]="job.id">{{ job.name }}</option>
     </select>
-  </fieldset>
+   <button type="submit" (click)="postColonist()">Check In</button>    
+  </form>
 
-  <footer>
-   <a routerLink="/encounters"><h2>Check In</h2></a>
-  </footer>
 
 </body>
+
+
+<!--
+<a routerLink="/encounters"></a>-->
