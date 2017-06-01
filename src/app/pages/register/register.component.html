@@ -2,17 +2,17 @@
   <div class="page-heading">
     <h2>Register</h2>
   </div>
-  
-    <form class="register-form">
-    <fieldset>
-      <input type="text" placeholder="Enter your name" required/>
-      <input type="number" placeholder="Enter your age" required/>
-      <select>
-        <option value="1">Select an occupation</option>
-      </select>
-    </fieldset>
-    <button type="submit">Register</button>
-  </form>
+
+  <form class="register-form" [formGroup]="registerForm">
+  <fieldset>
+    <input type="text" placeholder="Enter your name" required formControlName="name"/>
+    <input type="number" placeholder="Enter your age" required formControlName="age"/>
+    <select required formControlName="job_id">
+      <option value="1">Select an occupation</option>
+    </select>
+  </fieldset>
+  <button type="submit">Register</button>
+</form>
 
 
 </body>
