@@ -3,7 +3,22 @@
     <h2>Register</h2>
   </div>
   
-  <form #arrivalForm="ngForm">
+    <form class="register-form">
+    <fieldset>
+      <input type="text" placeholder="Enter your name" />
+      <input type="number" placeholder="Enter your age" />
+      <select>
+        <option value="1">Select an occupation</option>
+      </select>
+    </fieldset>
+    <button type="submit">Register</button>
+  </form>
+
+
+</body>
+
+
+  <!--<form #arrivalForm="ngForm">
     <input [(ngModel)]="colonist.name" name="name" type="text" placeholder="Name"/>
     <input [(ngModel)]="colonist.age" type="number" id="age" name="age" placeholder="Age" min="1" max="200"/> 
     <select [(ngModel)]="colonist.job_id" name="job">
@@ -11,11 +26,4 @@
       <option *ngFor="let job of jobs" [value]="job.id">{{ job.name }}</option>
     </select>
    <button type="submit" (click)="postColonist()">Check In</button>    
-  </form>
-
-
-</body>
-
-
-<!--
-<a routerLink="/encounters"></a>-->
+  </form>-->

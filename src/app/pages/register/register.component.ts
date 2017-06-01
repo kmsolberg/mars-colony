@@ -38,14 +38,4 @@ export class RegisterComponent implements OnInit {
                       });
   }
 
-  // onSubmit(){
-  //   this.colonistService
-  //       .newColonist(this.colonist)
-  //       .then(colonist => {
-  //           this.router.navigate(['/encounters']);
-  //       })
-  //       .catch(error => {
-  //           // TODO: Handle error
-  //       });
-// }
 }
