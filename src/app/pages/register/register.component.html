@@ -8,7 +8,8 @@
     <input type="text" placeholder="Enter your name" required formControlName="name"/>
     <input type="number" placeholder="Enter your age" required formControlName="age"/>
     <select required formControlName="job_id">
-      <option value="1">Select an occupation</option>
+      <option [value]="NO_OCCUPATION_SELECTED">Select an Occupation</option>      
+      <option *ngFor="let job of jobs" [value]="job.id">{{ job.name }}</option>
     </select>
   </fieldset>
   <button type="submit">Register</button>

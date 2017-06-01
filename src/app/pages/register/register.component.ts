@@ -24,11 +24,13 @@ export class RegisterComponent implements OnInit {
 
   jobs: Job[] = [];
   colonist: Colonist;
+  registerForm: FormGroup;
   NO_OCCUPATION_SELECTED = '(none)';
 
   constructor(private jobService: JobsService,
               private colonistService: ColonistService,
-              private router: Router) { 
+              private router: Router,
+              private formBuilder: FormBuilder) { 
                 this.colonist = new Colonist('', '', this.NO_OCCUPATION_SELECTED);
               }
 
@@ -44,7 +46,7 @@ export class RegisterComponent implements OnInit {
         Validators.minLength(3)
         ]),
       age: new FormControl('', [Validators.required]),
-      job_id: new FormControl('', [])
+      job_id: new FormControl(this.NO_OCCUPATION_SELECTED, [])
     });
   }
 
