@@ -55,7 +55,8 @@ export class ReportComponent implements OnInit {
     if (this.reportForm.invalid) {
       // the form is invalid
     } else {
-      const date = Date.now();
+      const today = new Date();
+      const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
       const colonist_id = window.localStorage.userID;
       const action = this.reportForm.get('action').value;
       const atype = this.reportForm.get('a_type').value;
