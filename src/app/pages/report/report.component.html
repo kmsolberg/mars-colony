@@ -8,10 +8,10 @@
     <fieldset>
       <select required formControlName="a_type">
         <option [value]="NO_ALIEN_SELECTED">Select an Alien</option>
-        <option *ngFor="let aliens of aliens" [value]="atype">{{ aliens.type }}</option>
+        <option *ngFor="let aliens of aliens" [value]="aliens.type">{{ aliens.type }}</option>
       </select>
-      <textarea cols="30" rows="10" required formControlName="action" placeholder="Action Taken" [value]="action"> </textarea>
+      <textarea name="action_taken" cols="30" rows="10" required formControlName="action" placeholder="Action Taken" [value]="action"></textarea>
     </fieldset>
-    <button type="submit" [disabled]="registerForm.invalid">Register</button>
+    <button type="submit" [disabled]="reportForm.invalid">Register</button>
   </form>
 </body>

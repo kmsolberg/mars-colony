@@ -32,7 +32,7 @@ export class ReportComponent implements OnInit {
               private reportService: ReportService,
               private router: Router,
               private formBuilder: FormBuilder) {
-                this.report = new Report(this.NO_ALIEN_SELECTED, '', '', '');
+                this.report = new Report('', '', '', this.NO_ALIEN_SELECTED);
               }
 
   ngOnInit() {
@@ -55,17 +55,17 @@ export class ReportComponent implements OnInit {
     if (this.reportForm.invalid) {
       // the form is invalid
     } else {
-      const atype = this.reportForm.get('atype').value;
       const date = Date.now();
-      const action = this.reportForm.get('action').value;
       const colonist_id = window.localStorage.userID;
+      const action = this.reportForm.get('action').value;
+      const atype = this.reportForm.get('a_type').value;
       const report = new Report(atype, date, action, colonist_id);
       console.log('WIN!', report)
-      this.reportService
-      .postData(this.report)
-      .subscribe(report => {
-        this.router.navigate(['/encounters']);
-      });
+      // this.reportService
+      // .postData(this.report)
+      // .subscribe(report => {
+      //   this.router.navigate(['/encounters']);
+      // });
     }
   }
 }
