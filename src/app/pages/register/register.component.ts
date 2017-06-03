@@ -76,6 +76,7 @@ export class RegisterComponent implements OnInit {
       this.colonistService
       .postData(colonist)
       .subscribe(colonist => {
+        window.localStorage.setItem('userID', colonist.colonist.id);
         this.router.navigate(['/encounters']);
       });
     }
