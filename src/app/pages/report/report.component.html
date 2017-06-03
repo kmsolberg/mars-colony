@@ -2,16 +2,15 @@
   <h2>Report Encounter</h2>
   <p>Safety on Mars is Your Responsibility</p>
 
-  <fieldset>
-    <select name="" id="">
-      <option value="">Select an Alien</option>    
-      <option *ngFor="let aliens of aliens" value="">{{ aliens.type }}</option>       
-    </select>
-    <textarea name="textarea"
-    rows="10" cols="50" >Actions Taken</textarea>
-  </fieldset>
+  <form class- "report-form" [formGroup]="registerForm" (ngSubmit)="register($event)">
+    <fieldset>
+      <select required formControlName="alien">
+        <option value="NO_ALIEN_SELECTED">Select an Alien</option>    
+        <option *ngFor="let aliens of aliens" value="">{{ aliens.type }}</option>       
+      </select>
+      <textarea name="textarea" rows="10" cols="50" formControlName="action">Actions Taken</textarea>
+    </fieldset>
+    <button type="submit" [disabled]="registerForm.invalid">Register</button>
+  </form>
 
-  <footer>
-   <a routerLink="/encounters"><h2>Check In</h2></a>
-  </footer>
 </body>-->

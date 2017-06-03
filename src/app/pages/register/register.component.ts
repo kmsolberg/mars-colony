@@ -3,6 +3,19 @@ import { Job } from '../../models/job';
 import { JobsService } from '../../services/jobs.service';
 import { Colonist } from '../../models/colonist';
 import { ColonistService } from '../../services/colonist.service';
+
+const cantBe = (value: string): ValidatorFn => {
+  return (control: AbstractControl) => {
+    return control.value === value ? { 'Cant be this value': value } : null;
+  };
+};
+
+const tooOld = (age: string): ValidatorFn => {
+  return (control: AbstractControl) => {
+    return control.value > age ? { 'Youre too old to go to Mars': age } : null;
+  };
+};
+
 import {
   FormGroup,
   FormControl,
@@ -46,15 +59,25 @@ export class RegisterComponent implements OnInit {
         Validators.minLength(3)
         ]),
       age: new FormControl('', [Validators.required]),
-      job_id: new FormControl(this.NO_OCCUPATION_SELECTED, [])
+      job_id: new FormControl(this.NO_OCCUPATION_SELECTED, [cantBe(this.NO_OCCUPATION_SELECTED)])
     });
   }
 
-  postColonist() {
-    this.colonistService.postData(this.colonist)
-                        .subscribe((newColonist) => {
-                        this.router.navigate(['/encounters']);
-                        });
+  register(e) {
+    e.preventDefault();
+    if (this.registerForm.invalid) {
+      // the form is invalid
+    } else {
+      const name = this.registerForm.get('name').value;
+      const age = this.registerForm.get('age').value;
+      const job_id = this.registerForm.get('job_id').value;
+      const colonist = new Colonist(name, age, job_id);
+      console.log('WIN!', colonist);
+      this.colonistService
+      .postData(colonist)
+      .subscribe(colonist => {
+        this.router.navigate(['/encounters']);
+      });
+    }
   }
-
 }
