@@ -24,7 +24,7 @@ import { RouterModule, Router } from '@angular/router';
 export class ReportComponent implements OnInit {
 
   aliens: Aliens[] = [];
-  report: Report;
+  encounter: Report;
   reportForm: FormGroup;
   NO_ALIEN_SELECTED = '(none)';
 
@@ -32,7 +32,7 @@ export class ReportComponent implements OnInit {
               private reportService: ReportService,
               private router: Router,
               private formBuilder: FormBuilder) {
-                this.report = new Report('', '', '', this.NO_ALIEN_SELECTED);
+                this.encounter = new Report( this.NO_ALIEN_SELECTED, '', '', '');
               }
 
   ngOnInit() {
@@ -60,13 +60,13 @@ export class ReportComponent implements OnInit {
       const colonist_id = window.localStorage.userID;
       const action = this.reportForm.get('action').value;
       const atype = this.reportForm.get('a_type').value;
-      const report = new Report(atype, date, action, colonist_id);
-      console.log('WIN!', report)
-      // this.reportService
-      // .postData(this.report)
-      // .subscribe(report => {
-      //   this.router.navigate(['/encounters']);
-      // });
+      const encounter = new Report(atype, date, action, colonist_id);
+      console.log('WIN!', encounter)
+      this.reportService
+      .postData(encounter)
+      .subscribe(report => {
+        this.router.navigate(['/encounters']);
+      });
     }
   }
 }
