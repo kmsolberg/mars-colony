@@ -16,7 +16,7 @@ export class JobsService {
 
   getData() {
     return this.http.get(this.JOBS_URL)
-                    .map(this.extractJobs);
+      .map(this.extractJobs);
   }
 
   extractJobs(res: Response) {

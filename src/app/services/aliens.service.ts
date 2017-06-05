@@ -15,7 +15,7 @@ export class AliensService {
 
   getData() {
     return this.http.get(this.ALIENS_URL)
-                    .map(this.extractAliens)
+      .map(this.extractAliens)
   }
 
   extractAliens(res: Response) {

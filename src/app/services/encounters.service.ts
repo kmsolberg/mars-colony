@@ -16,7 +16,7 @@ export class EncountersService {
 
   getData() {
     return this.http.get(this.ENCOUNTERS_URL)
-              .map(this.extractEncounters);
+      .map(this.extractEncounters);
   }
 
   extractEncounters(res: Response) {

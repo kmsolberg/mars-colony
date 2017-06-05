@@ -14,10 +14,10 @@ export class ColonistService {
   constructor(private http: Http) { }
 
   postData(colonist: Colonist) {
-    const headers = new Headers({ 'Content-Type': 'application/json'});
+    const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers });
-    return this.http.post(this.COLONIST_URL, {colonist}, options)
-                    .map(this.extractData);
+    return this.http.post(this.COLONIST_URL, { colonist }, options)
+      .map(this.extractData);
   }
 
   extractData(res: Response) {
