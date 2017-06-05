@@ -7,6 +7,7 @@ This project is an introduction to using Angular and creating a web application!
 This website uses Angular to create a multi-paged web application for Mars colonists!
 
 - SASS
+- [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
 - [Angular](https://angular.io/)
   - Angular Compiler
   - Angular Core
